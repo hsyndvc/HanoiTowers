@@ -50,7 +50,8 @@ namespace HanoiTowers
                 cmd.CommandText = @"CREATE TABLE IF NOT EXISTS sıralama(id INTEGER PRIMARY KEY,kullanici_adi TEXT, disk_sayi INT, hamle INT, sure INT)";
                 cmd.ExecuteNonQuery();
 
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM sıralama", connection);
+                //SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM sıralama", connection); 
+                SQLiteDataAdapter da = new SQLiteDataAdapter("select kullanici_adi, disk_sayi, hamle, sure from sıralama", connection);
                 DataSet dataSet = new DataSet();
                 da.Fill(dataSet);
                 dataGridView1.DataSource = dataSet.Tables[0];
