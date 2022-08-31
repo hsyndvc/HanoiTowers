@@ -50,6 +50,9 @@
             this.labelçubuk2 = new System.Windows.Forms.Label();
             this.labelçubuk3 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelYas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,20 +77,20 @@
             "7",
             "8",
             "9"});
-            this.cB1.Location = new System.Drawing.Point(148, 61);
+            this.cB1.Location = new System.Drawing.Point(129, 85);
             this.cB1.Name = "cB1";
             this.cB1.Size = new System.Drawing.Size(174, 31);
-            this.cB1.TabIndex = 1;
+            this.cB1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label1.Location = new System.Drawing.Point(13, 69);
+            this.label1.Location = new System.Drawing.Point(27, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 23);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Seviye :";
             // 
             // panel1
@@ -100,7 +103,7 @@
             this.panel1.Location = new System.Drawing.Point(17, 141);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(344, 393);
-            this.panel1.TabIndex = 8;
+            this.panel1.TabIndex = 15;
             this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel_DragDrop);
             this.panel1.DragOver += new System.Windows.Forms.DragEventHandler(this.panel_DragOver);
             // 
@@ -114,7 +117,7 @@
             this.panel3.Location = new System.Drawing.Point(715, 141);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(347, 393);
-            this.panel3.TabIndex = 10;
+            this.panel3.TabIndex = 17;
             this.panel3.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel_DragDrop);
             this.panel3.DragOver += new System.Windows.Forms.DragEventHandler(this.panel_DragOver);
             // 
@@ -128,7 +131,7 @@
             this.panel2.Location = new System.Drawing.Point(367, 141);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(342, 393);
-            this.panel2.TabIndex = 9;
+            this.panel2.TabIndex = 16;
             this.panel2.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel_DragDrop);
             this.panel2.DragOver += new System.Windows.Forms.DragEventHandler(this.panel_DragOver);
             // 
@@ -139,11 +142,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(148, 5);
+            this.textBox1.Location = new System.Drawing.Point(129, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(174, 31);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // button1
             // 
@@ -153,27 +156,27 @@
             this.button1.Location = new System.Drawing.Point(20, 532);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(1042, 20);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 18;
             this.button1.UseVisualStyleBackColor = false;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 23;
-            this.listBox1.Location = new System.Drawing.Point(775, 574);
+            this.listBox1.Location = new System.Drawing.Point(774, 558);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(234, 372);
-            this.listBox1.TabIndex = 6;
+            this.listBox1.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label2.Location = new System.Drawing.Point(13, 13);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 23);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 4;
             this.label2.Text = "Kullanıcı Adı :";
             // 
             // labelHamleSayisi
@@ -195,7 +198,7 @@
             this.labelSure.Location = new System.Drawing.Point(655, 88);
             this.labelSure.Name = "labelSure";
             this.labelSure.Size = new System.Drawing.Size(54, 23);
-            this.labelSure.TabIndex = 12;
+            this.labelSure.TabIndex = 10;
             this.labelSure.Text = "Süre :";
             // 
             // btnOyna
@@ -204,10 +207,10 @@
             this.btnOyna.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnOyna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOyna.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btnOyna.Location = new System.Drawing.Point(413, 51);
+            this.btnOyna.Location = new System.Drawing.Point(392, 49);
             this.btnOyna.Name = "btnOyna";
             this.btnOyna.Size = new System.Drawing.Size(146, 49);
-            this.btnOyna.TabIndex = 2;
+            this.btnOyna.TabIndex = 3;
             this.btnOyna.Text = "Oyna";
             this.btnOyna.UseVisualStyleBackColor = false;
             this.btnOyna.Click += new System.EventHandler(this.btnOyna_Click);
@@ -217,19 +220,19 @@
             this.labelKullanıcı.AutoSize = true;
             this.labelKullanıcı.BackColor = System.Drawing.Color.Transparent;
             this.labelKullanıcı.ForeColor = System.Drawing.Color.Cornsilk;
-            this.labelKullanıcı.Location = new System.Drawing.Point(448, 9);
+            this.labelKullanıcı.Location = new System.Drawing.Point(351, 9);
             this.labelKullanıcı.Name = "labelKullanıcı";
             this.labelKullanıcı.Size = new System.Drawing.Size(111, 23);
-            this.labelKullanıcı.TabIndex = 5;
+            this.labelKullanıcı.TabIndex = 7;
             this.labelKullanıcı.Text = "Kullanıcı Adı :";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(148, 558);
+            this.dataGridView1.Location = new System.Drawing.Point(102, 558);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(445, 388);
-            this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.Size = new System.Drawing.Size(544, 388);
+            this.dataGridView1.TabIndex = 19;
             // 
             // labelçubuk1
             // 
@@ -240,7 +243,7 @@
             this.labelçubuk1.Location = new System.Drawing.Point(174, 120);
             this.labelçubuk1.Name = "labelçubuk1";
             this.labelçubuk1.Size = new System.Drawing.Size(35, 41);
-            this.labelçubuk1.TabIndex = 14;
+            this.labelçubuk1.TabIndex = 12;
             this.labelçubuk1.Text = "1";
             // 
             // labelçubuk2
@@ -252,7 +255,7 @@
             this.labelçubuk2.Location = new System.Drawing.Point(524, 120);
             this.labelçubuk2.Name = "labelçubuk2";
             this.labelçubuk2.Size = new System.Drawing.Size(35, 41);
-            this.labelçubuk2.TabIndex = 15;
+            this.labelçubuk2.TabIndex = 13;
             this.labelçubuk2.Text = "2";
             // 
             // labelçubuk3
@@ -264,7 +267,7 @@
             this.labelçubuk3.Location = new System.Drawing.Point(872, 120);
             this.labelçubuk3.Name = "labelçubuk3";
             this.labelçubuk3.Size = new System.Drawing.Size(35, 41);
-            this.labelçubuk3.TabIndex = 16;
+            this.labelçubuk3.TabIndex = 14;
             this.labelçubuk3.Text = "3";
             // 
             // label3
@@ -275,12 +278,43 @@
             this.label3.Location = new System.Drawing.Point(666, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(396, 46);
-            this.label3.TabIndex = 17;
+            this.label3.TabIndex = 9;
             this.label3.Text = "1 nolu kuledeki tüm diskleri 3 nolu kuleye taşıyınız.\r\nKüçük diskin üzerine büyük" +
     " disk konmaz.";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(129, 46);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(93, 31);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label4.Location = new System.Drawing.Point(37, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 23);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Yas :";
+            // 
+            // labelYas
+            // 
+            this.labelYas.AutoSize = true;
+            this.labelYas.BackColor = System.Drawing.Color.Transparent;
+            this.labelYas.ForeColor = System.Drawing.Color.Cornsilk;
+            this.labelYas.Location = new System.Drawing.Point(494, 9);
+            this.labelYas.Name = "labelYas";
+            this.labelYas.Size = new System.Drawing.Size(44, 23);
+            this.labelYas.TabIndex = 8;
+            this.labelYas.Text = "Yas :";
+            // 
             // Form1
             // 
+            this.AcceptButton = this.btnOyna;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -292,11 +326,14 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.labelYas);
             this.Controls.Add(this.labelKullanıcı);
             this.Controls.Add(this.btnOyna);
             this.Controls.Add(this.labelSure);
             this.Controls.Add(this.labelHamleSayisi);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel3);
@@ -341,5 +378,8 @@
         private System.Windows.Forms.Label labelçubuk2;
         private System.Windows.Forms.Label labelçubuk3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelYas;
     }
 }

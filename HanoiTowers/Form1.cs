@@ -23,6 +23,7 @@ namespace HanoiTowers
 
         string ad;
         int disksayi;
+        int yas;
         int hamle;
         int süre;
         public static bool formAcikMi = false;
@@ -47,11 +48,11 @@ namespace HanoiTowers
                 connection.Open();
 
                 var cmd = new SQLiteCommand(connection);
-                cmd.CommandText = @"CREATE TABLE IF NOT EXISTS sıralama(id INTEGER PRIMARY KEY,kullanici_adi TEXT, disk_sayi INT, hamle INT, sure INT)";
+                cmd.CommandText = @"CREATE TABLE IF NOT EXISTS sıralama(id INTEGER PRIMARY KEY,kullanici_adi TEXT, yas INT, disk_sayi INT, hamle INT, sure INT)";
                 cmd.ExecuteNonQuery();
 
                 //SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM sıralama", connection); 
-                SQLiteDataAdapter da = new SQLiteDataAdapter("select kullanici_adi, disk_sayi, hamle, sure from sıralama", connection);
+                SQLiteDataAdapter da = new SQLiteDataAdapter("select kullanici_adi, yas, disk_sayi, hamle, sure from sıralama", connection);
                 DataSet dataSet = new DataSet();
                 da.Fill(dataSet);
                 dataGridView1.DataSource = dataSet.Tables[0];
@@ -68,10 +69,10 @@ namespace HanoiTowers
             try
             {
                 var cmd = new SQLiteCommand(connection);
-                cmd.CommandText = "INSERT INTO sıralama(kullanici_adi,disk_sayi,hamle,sure) VALUES('" + ad + "'," + disksayi + "," + hamle + "," + süre + ");";
+                cmd.CommandText = "INSERT INTO sıralama(kullanici_adi,yas,disk_sayi,hamle,sure) VALUES('" + ad + "'," + yas + "," + disksayi + "," + hamle + "," + süre + ");";
                 cmd.ExecuteNonQuery();
 
-                SQLiteDataAdapter da = new SQLiteDataAdapter("SELECT * FROM sıralama", connection);
+                SQLiteDataAdapter da = new SQLiteDataAdapter("select kullanici_adi, yas, disk_sayi, hamle, sure from sıralama", connection);
                 DataSet dataSet = new DataSet();
                 da.Fill(dataSet);
 
@@ -145,6 +146,7 @@ namespace HanoiTowers
                         int dakika = saniye / 60;
                         MessageBox.Show(labelKullanıcı.Text + " " + hamleSayisi.ToString() + " Hamle de yaptın. " + "\nSüreniz : " + (saniye > 60 ? dakika + "  Dakika  " + (saniye - (dakika * 60)).ToString() + " Saniye" : saniye.ToString() + " Saniye"), "Tebrikler Oyunu Bitirdiniz.");
                         ad = Convert.ToString(labelKullanıcı.Text);
+                        yas = Convert.ToInt16(labelYas.Text);
                         disksayi = Convert.ToInt16(cB1.Text);
                         hamle = hamleSayisi;
                         süre = saniye;
@@ -171,6 +173,7 @@ namespace HanoiTowers
             labelHamleSayisi.Text = "";
             labelSure.Text = "";
             labelKullanıcı.Text = "";
+            labelYas.Text = "";
             this.Activate();
             this.Focus();
             cB1.SelectedIndex = 0;
@@ -186,6 +189,7 @@ namespace HanoiTowers
             panel3.Controls.Clear();
             listBox1.Items.Clear();
             labelKullanıcı.Text = "";
+            labelYas.Text = "";
             labelHamleSayisi.Text = "";
             labelSure.Text = "";
             timer_sure.Stop();
@@ -196,6 +200,7 @@ namespace HanoiTowers
             hamleSayisi = 0;
             labelHamleSayisi.Text = "Hamle Sayisi : " + hamleSayisi.ToString();
             labelKullanıcı.Text = textBox1.Text;
+            labelYas.Text = textBox2.Text;
             buttonSayisi = Int32.Parse(cB1.SelectedItem.ToString());
             int bXkonum = ((panel1.Width - (buttonSayisi * 20)) / 2);
             for (int i = buttonSayisi; i > 0; i--)
@@ -224,9 +229,12 @@ namespace HanoiTowers
         {
             yeniOyun();
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
+
+        private void textBox_TextChanged(object sender, EventArgs e)
         {
             if (textBox1.Text == "")
+                btnOyna.Enabled = false;
+            else if (textBox2.Text == "")
                 btnOyna.Enabled = false;
             else
                 btnOyna.Enabled = true;
